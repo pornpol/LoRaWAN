@@ -22,8 +22,8 @@ lora.add_channel(0, frequency=923200000, dr_min=0, dr_max=4)
 lora.join(activation=LoRa.ABP, auth=(dev_addr, nwk_swkey, app_swkey))
 
 # remove all the non-default channels
-for i in range(1, 16):
-    lora.remove_channel(i)
+# for i in range(1, 16):
+#     lora.remove_channel(i)
 
 
 # create a LoRa socket
@@ -53,7 +53,7 @@ while True:
 # import time
 #
 # # Initialize LoRa in LORAWAN mode.
-# lora = LoRa(mode=LoRa.LORAWAN, public=True, adr=False)
+# lora = LoRa(mode=LoRa.LORAWAN)
 #
 # # create an OTA authentication params
 # dev_eui = binascii.unhexlify('70 B3 D5 49 9D E0 B9 63'.replace(' ',''))
@@ -63,8 +63,8 @@ while True:
 # # auth = (bytes([0x70, 0xB3, 0xD5, 0x7E, 0xF0, 0x00, 0x63, 0xC1]),
 #         # bytes([0x8E, 0xAE, 0xEC, 0x76, 0x42, 0x85, 0x74, 0x50, 0xD3, 0x00, 0x3D, 0x67, 0x75, 0xE5, 0x84, 0x14]))
 #
-# # for channel in range(0, 72):
-# #     lora.remove_channel(channel)
+# for channel in range(0, 72):
+#     lora.remove_channel(channel)
 #
 # # for index in range(0, 72):
 #     # lora.add_channel(index, frequency=923200000, dr_min=0, dr_max=3)
@@ -105,9 +105,3 @@ while True:
 #     if rx:
 #         print(rx)
 #     time.sleep(6)
-
-# from network import LoRa
-# import binascii
-# lora = LoRa(mode=LoRa.LORAWAN)
-# print("Lora MAC is: ")
-# print(binascii.hexlify(lora.mac()).upper().decode('utf-8'))
